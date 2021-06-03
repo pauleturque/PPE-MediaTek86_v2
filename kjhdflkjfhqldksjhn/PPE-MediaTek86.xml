@@ -1,0 +1,903 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PPE-MediaTek86</name>
+    </assembly>
+    <members>
+        <member name="T:kjhdflkjfhqldksjhn.ConnexionBD.Connect">
+            <summary>
+            Classe permettant la connexion à la base de données
+            Méthodes de requêtes
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.ConnexionBD.Connect.instance">
+            <summary>
+            instance de la classe
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.ConnexionBD.Connect.connect">
+            <summary>
+            objet de connexion à la base de données
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.ConnexionBD.Connect.command">
+            <summary>
+            objet d'exécution d'une requête
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.ConnexionBD.Connect.reader">
+            <summary>
+            curseur
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.#ctor(System.String)">
+            <summary>
+            Constructeur de création de la connexion à la base de données
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.Instance(System.String)">
+            <summary>
+            Instanciation de la classe
+            </summary>
+            <param name="connectionString"></param>
+            <returns>instance</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.ReqSelect(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Requête select sur la base de données
+            </summary>
+            <param name="queryString"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.ReqUpdate(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Requête de modification des données ou d'insertion de données dans la base
+            </summary>
+            <param name="queryString"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.ReqDelete(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Requête de suppression de données dans la base de données
+            </summary>
+            <param name="queryString"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.Read">
+            <summary>
+            Lecture de la ligne suivante si possible
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.Field(System.String)">
+            <summary>
+            Retourne le champ en fonction du paramètre passé
+            </summary>
+            <param name="nameField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.Close">
+            <summary>
+            Ferme le curseur
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.ConnexionBD.Connect.Open">
+            <summary>
+            Ferme le curseur
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.frmConnection">
+            <summary>
+            Déclaration du formulaire de connexion
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.frmHome">
+            <summary>
+            Déclaration du formulaire principal de l'appli
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.frmAbsences">
+            <summary>
+            Déclaration du formulaire Absences
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.ListAbsences">
+            <summary>
+            Instanciation de la liste des absences
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.ListPersonnel">
+            <summary>
+            Instanciation de la liste du personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.ListMotifs">
+            <summary>
+            Instanciation de la liste des motifs
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.ListServices">
+            <summary>
+            Instanciation de la liste des services
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.absences">
+            <summary>
+            Déclaration du modèle d'absences
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.frmAjoutModifAbsence">
+            <summary>
+            Déclaration du formulaire d'ajout ou modification des absences
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.frmAddPerso">
+            <summary>
+            Déclaration du formulaire d'ajout d'un personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.motif">
+            <summary>
+            Déclaration du modèle des motifs
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.personnel">
+            <summary>
+            Déclaration du modèle des personnels
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Controle.services">
+            <summary>
+            Déclaration du modèle des services
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.#ctor">
+            <summary>
+            Constructeur du controleur, ouveture de la première fenêtre
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.AuthControl(System.String,System.String)">
+            <summary>
+            Contrôle de l'authentification à l'application
+            </summary>
+            <param name="login"></param>
+            <param name="pwd"></param>
+            <returns>vrai si ok, faux si errroné</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.UpdatePersonnel(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Méthode de mise à jour d'un personnel
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.AddPerso">
+            <summary>
+            Ouverture du formulaire permettant l'ajout d'un personnel
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.AjoutPersonnel(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Méthode d'ajout d'un personnel à la BDD
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.ModPerso(kjhdflkjfhqldksjhn.Modele.Personnel,System.Collections.Generic.List{kjhdflkjfhqldksjhn.Modele.Services},System.Collections.Generic.List{kjhdflkjfhqldksjhn.Modele.Services})">
+            <summary>
+            Ouverture du formulaire permettant de modifier un personnel
+            </summary>
+            <param name="personnel"></param>
+            <param name="services"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.SupprimerPersonnel(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Méthode de suppression d'un personnel dans la BDD
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.AfficherAbsences(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Ouverture du formulaire d'absences d'un personnel
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.AjouterAbsences(kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Méthode d'ajout d'une absence à la liste d'absence d'un personnel dans la BDD
+            </summary>
+            <param name="absence"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.OuvrirAjoutAbsence(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Ouvertude du formulaire d'ajout d'une absence
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.SupprimerAbsence(kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Méthode de suppression d'une absence
+            </summary>
+            <param name="absence"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.OuvrirAbsenseAmodifier(kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Ouverture du formulaire de modification d'une absence
+            </summary>
+            <param name="absence"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Controle.ModifierAbsence(kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Méthode de modification d'une absence
+            </summary>
+            <param name="absence"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Dal.DataAccess.connectionString">
+            <summary>
+            Chaîne de connexion à la base de données
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.AuthenticationControl(System.String,System.String)">
+            <summary>
+            Requête permettant l'authentification par vérification
+            Du mot de passe et del'identifiant dans la base de données
+            </summary>
+            <param name="login"></param>
+            <param name="pwd"></param>
+            <returns>vrai si ok, faux si erroné</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.GetPersonnels">
+            <summary>
+            Requête de récupération du contenu de la table personnel de la bdd
+            </summary>
+            <returns>Liste des personnels</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.GetServices">
+            <summary>
+            Requête de récupération de la liste des services dans la bdd
+            </summary>
+            <returns>Liste des services</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.GetAbsences">
+            <summary>
+            Requête de récupération de la liste des absences dans la bdd
+            </summary>
+            <param name="personnel"></param>
+            <returns>Liste des absences</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.GetMotifs">
+            <summary>
+            Requête de récupération de la liste des motifs dans la bdd
+            </summary>
+            <returns>Liste des motifs</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.AddPersonnel(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Requête d'ajout d'un personnel à la base de données
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.DeletePersonnel(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Requête de suppression d'un personnel dans la bdd
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.UpdatePersonnel(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Requête de mise à jour d'un personnel dans la bdd
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.AddAbsence(kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Requête d'ajout d'une absence dans la base de données
+            </summary>
+            <param name="absence"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.DeleteAbsence(kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Requête de suppression d'une absence dans la bdd
+            </summary>
+            <param name="absence"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.UpdateAbsence(kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Requête de mise à jour d'une absence dans la bdd
+            </summary>
+            <param name="absence"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Dal.DataAccess.GetStringSha256Hash(System.String)">
+            <summary>
+            Encryption d'une chaîne de caractères
+            </summary>
+            <param name="text"></param>
+            <returns>Chaîne cryptée</returns>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Modele.Absences.idpersonnel">
+            <summary>
+            Propriétés correspondant aux champs de la table absence
+            </summary>
+        </member>
+        <member name="P:kjhdflkjfhqldksjhn.Modele.Absences.IdPersonnel">
+            <summary>
+            getters et setters sur les propriétés de la classe
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Modele.Absences.#ctor(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            constructeur valorisant les propriétés de la classe
+            </summary>
+            <param name="idpersonnel"></param>
+            <param name="idmotif"></param>
+            <param name="datedebut"></param>
+            <param name="datefin"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Modele.Motif.idmotif">
+            <summary>
+            Propriétés correspondant aux champs de la table motif
+            </summary>
+        </member>
+        <member name="P:kjhdflkjfhqldksjhn.Modele.Motif.IdMotif">
+            <summary>
+            getters sur les propriétés de la classe
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Modele.Motif.#ctor(System.Int32,System.String)">
+            <summary>
+            constructeur valorisant les propriétés de la classe
+            </summary>
+            <param name="idmotif"></param>
+            <param name="libelle"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Modele.Personnel.idpersonnel">
+            <summary>
+            propriétés correspondant aux champs de la table
+            </summary>
+        </member>
+        <member name="P:kjhdflkjfhqldksjhn.Modele.Personnel.IdPersonnel">
+            <summary>
+            getters et setters sur les propriétés de la classe personnel
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Modele.Personnel.#ctor(System.Int32,System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            constructeur valorisant les propriétés
+            </summary>
+            <param name="idpersonnel"></param>
+            <param name="idservice"></param>
+            <param name="nom"></param>
+            <param name="prenom"></param>
+            <param name="tel"></param>
+            <param name="mail"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Modele.Responsable.login">
+            <summary>
+            propriétés correspondant aux champs de la table responsable
+            </summary>
+        </member>
+        <member name="P:kjhdflkjfhqldksjhn.Modele.Responsable.Login">
+            <summary>
+            getters sur les propriétés de la classe
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Modele.Responsable.#ctor(System.String,System.String)">
+            <summary>
+            constructeur volorisant les propriétés de la classe
+            </summary>
+            <param name="login"></param>
+            <param name="pwd"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Modele.Services.idservice">
+            <summary>
+            propriétés correspondant aux champs de la table service
+            </summary>
+        </member>
+        <member name="P:kjhdflkjfhqldksjhn.Modele.Services.IdService">
+            <summary>
+            getters sur les propriétés
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Modele.Services.#ctor(System.Int32,System.String)">
+            <summary>
+            constructeur valorisant les propriétés de la classe
+            </summary>
+            <param name="idservice"></param>
+            <param name="nom"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAbsences.controle">
+            <summary>
+            Déclaration de l'objet controle
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAbsences.personnel">
+            <summary>
+            Déclaration de l'objet personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAbsences.absences">
+            <summary>
+            Déclaration de l'objet absences
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAbsences.bsAbsences">
+            <summary>
+            Initialisation de la source de données des absences
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAbsences.bsMotifs">
+            <summary>
+            Initialisation de la source de données des motifs d'absences
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.#ctor(kjhdflkjfhqldksjhn.Controle,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Constructeur du formulaire absences
+            </summary>
+            <param name="controle"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.RecupAbsence">
+            <summary>
+            Fonction permettant de récupérer l'absence selectionnée dans la liste
+            </summary>
+            <returns>Absence selectionnée</returns>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.InitDatasAbsences(kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Méthode de remplissage de la liste des absences
+            </summary>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.frmAbsences_Load(System.Object,System.EventArgs)">
+            <summary>
+            Personnalisation de la fenêtre avec l'identité du personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.btnAjoutAbsence_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant d'ouvrir la fenêtre absences
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.btnSupprimerAbsence_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant la suppression d'une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.btnModifierAbsence_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant la modification d'une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAbsences.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAbsences.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAddPerso.controle">
+            <summary>
+            Déclaration de l'objet controle
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAddPerso.personnel">
+            <summary>
+            Déclaration de l'objet personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAddPerso.service">
+            <summary>
+            Déclaration de l'objet service
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAddPerso.ListeService">
+            <summary>
+            Déclaration de la liste des services
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAddPerso.bsServices">
+            <summary>
+            Initialisation de la source de données pour la liste des services
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAddPerso.#ctor(kjhdflkjfhqldksjhn.Controle,kjhdflkjfhqldksjhn.Modele.Personnel,System.Collections.Generic.List{kjhdflkjfhqldksjhn.Modele.Services})">
+            <summary>
+            Constructeur du formulaire d'ajout d'un personnel
+            </summary>
+            <param name="controle"></param>
+            <param name="personnel"></param>
+            <param name="ListeService"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAddPerso.InitialiseServices">
+            <summary>
+            Méthode de liaison de la liste de services avec la source de données
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAddPerso.btnValider_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant de valider l'ajout d'un personnel à la liste
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAddPerso.btnAnnuler_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant d'annuler l'ajout d'un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAddPerso.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAddPerso.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAddPerso.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAjoutAbsence.controle">
+            <summary>
+            Déclaration de l'objet controle
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAjoutAbsence.personnel">
+            <summary>
+            Déclaration de l'objet personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAjoutAbsence.bsMotifs">
+            <summary>
+            Initialisation de la source de données de la liste des motifs
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAjoutAbsence.absence">
+            <summary>
+            Déclaration de l'objet absences
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAjoutAbsence.#ctor(kjhdflkjfhqldksjhn.Controle,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Constructeur du formulaire d'ajout d'une absence
+            </summary>
+            <param name="controle"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAjoutAbsence.InitialiseMotifs">
+            <summary>
+            Méthode permettant de récupérer et d'afficher la liste de motifs d'absences
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAjoutAbsence.frmAjoutModifAbsence_Load(System.Object,System.EventArgs)">
+            <summary>
+            Personnalisation de la fenêtre avec l'identité du personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAjoutAbsence.btnValiderAbsence_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant de valider l'ajout d'une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAjoutAbsence.btnAnnulerAbsence_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant l'annulation de l'ajout d'une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmAjoutAbsence.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAjoutAbsence.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmAjoutAbsence.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmConnection.controle">
+            <summary>
+            Déclaration de l'objet controle
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmConnection.#ctor(kjhdflkjfhqldksjhn.Controle)">
+            <summary>
+            Constructeur de la fenêtre de connexion
+            </summary>
+            <param name="controle"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmConnection.frmConnection_Load(System.Object,System.EventArgs)">
+            <summary>
+            Remplacement des caratères du mot de passe par des étoiles
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmConnection.btnSubmit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant de valider la connexion
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmConnection.components">
+            <summary>
+             Required designer variable.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmConnection.Dispose(System.Boolean)">
+            <summary>
+             Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmConnection.InitializeComponent">
+            <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmHome.controle">
+            <summary>
+            Déclaration de l'objet controle
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmHome.personnel">
+            <summary>
+            Déclaration de l'objet personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmHome.bsPersonnel">
+            <summary>
+            Déclaration et initialisation de la source de données de la liste des personnels
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmHome.bsServices">
+            <summary>
+            Déclaration et initialisation de la source de données de la liste des services
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmHome.bsAbsences">
+            <summary>
+            Déclaration et initialisation de la source de données de la liste des absences
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.#ctor(kjhdflkjfhqldksjhn.Controle)">
+            <summary>
+            Constructeur de la fenêtre principale
+            </summary>
+            <param name="controle"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.frmHome_Load(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.btnAddPerso_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ajout d'un personnel à la liste
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.btnAbsPerso_Click(System.Object,System.EventArgs)">
+            <summary>
+            Affichage des absences du personnel après selection dans la liste
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.btnModifierPerso_Click(System.Object,System.EventArgs)">
+            <summary>
+            Après selection d'un personnel dans la liste : Modification
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.btnDelPerso_Click(System.Object,System.EventArgs)">
+            <summary>
+            Après sélection d'une ligne et confirmation, Suppression du personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.frmHome.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.frmHome.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.controle">
+            <summary>
+            Déclaration de l'objet controle
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.absences">
+            <summary>
+            Déclaration de l'objet absence
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.personnel">
+            <summary>
+            Déclaration de l'objet personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.bsMotifs">
+            <summary>
+            Initialisation de la source de données des motifs d'absences
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.#ctor(kjhdflkjfhqldksjhn.Controle,kjhdflkjfhqldksjhn.Modele.Absences,kjhdflkjfhqldksjhn.Modele.Personnel)">
+            <summary>
+            Constructeur de la fenêtre de modification des absences
+            </summary>
+            <param name="controle"></param>
+            <param name="absences"></param>
+            <param name="personnel"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.InitialiseAbsenceAmodifier(kjhdflkjfhqldksjhn.Modele.Personnel,kjhdflkjfhqldksjhn.Modele.Absences)">
+            <summary>
+            Méthode permettant de récupérer l'absence à modifier et de remplir les champs selon l'objet
+            </summary>
+            <param name="personnel"></param>
+            <param name="absences"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.btnValider_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant de valider la modification d'une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.btnAnnuler_Click(System.Object,System.EventArgs)">
+            <summary>
+            Actcion permettant d'annuler la modification d'une absence
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModifierAbsence.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModPerso.controle">
+            <summary>
+            Déclaration de l'objet controle
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModPerso.personnel">
+            <summary>
+            Déclaration de l'objet personnel
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModPerso.services">
+            <summary>
+            Déclaration de l'objet service
+            </summary>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModPerso.result">
+            <summary>
+            Déclaration de l'objet result
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModPerso.#ctor(kjhdflkjfhqldksjhn.Controle,kjhdflkjfhqldksjhn.Modele.Personnel,System.Collections.Generic.List{kjhdflkjfhqldksjhn.Modele.Services},System.Collections.Generic.List{kjhdflkjfhqldksjhn.Modele.Services})">
+            <summary>
+            Constructeur de la fenêtre de modification d'un personnel
+            </summary>
+            <param name="controle"></param>
+            <param name="personnel"></param>
+            <param name="services"></param>
+            <param name="result"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModPerso.InitialiseServices(System.Collections.Generic.List{kjhdflkjfhqldksjhn.Modele.Services})">
+            <summary>
+            Méthode permettant l'initialisation de la liste des services
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModPerso.btnValider_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant de valider la modification d'un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModPerso.btnAnnuler_Click(System.Object,System.EventArgs)">
+            <summary>
+            Action permettant l'annulation de la modification d'un personnel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:kjhdflkjfhqldksjhn.Vues.frmModPerso.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModPerso.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:kjhdflkjfhqldksjhn.Vues.frmModPerso.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
