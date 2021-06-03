@@ -50,6 +50,7 @@ namespace kjhdflkjfhqldksjhn.Modele
             this.mail = mail;
         }
 
+
         /*public override string ToString()
         {
             return nom + " " + prenom + " " + tel + " " + mail;

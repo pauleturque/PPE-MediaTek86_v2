@@ -60,6 +60,11 @@ namespace kjhdflkjfhqldksjhn
             
         }
 
+        public void RefreshPerso()
+        {
+            bsPersonnel.ResetBindings(false);
+        }
+
         /// <summary>
         /// Ajout d'un personnel à la liste
         /// </summary>
@@ -68,8 +73,6 @@ namespace kjhdflkjfhqldksjhn
         private void btnAddPerso_Click(object sender, EventArgs e)
         {
             controle.AddPerso();
-            dgvPersonnel.Refresh();
-            dgvPersonnel.RefreshEdit();
         }
 
         /// <summary>

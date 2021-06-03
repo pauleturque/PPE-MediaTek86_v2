@@ -59,6 +59,11 @@ namespace kjhdflkjfhqldksjhn
             Absences absence = (Absences)bsAbsences.List[bsAbsences.Position];
             return absence;
         }
+
+        public void RefreshAbsences()
+        {
+            bsAbsences.ResetBindings(false);
+        }
         
         /// <summary>
         /// Méthode de remplissage de la liste des absences

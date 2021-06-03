@@ -4,9 +4,15 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Configurations>Debug;Release;Test</Configurations>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\pauline\source\repos\kjhdflkjfhqldksjhn\kjhdflkjfhqldksjhn\PPE-MediaTek86.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DocumentationFile>C:\Users\pauline\source\repos\kjhdflkjfhqldksjhn\kjhdflkjfhqldksjhn\PPE-MediaTek86.xml</DocumentationFile>
   </PropertyGroup>
 

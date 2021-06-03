@@ -41,7 +41,7 @@ namespace kjhdflkjfhqldksjhn
             // lblLog
             // 
             this.lblLog.AutoSize = true;
-            this.lblLog.Location = new System.Drawing.Point(349, 88);
+            this.lblLog.Location = new System.Drawing.Point(339, 86);
             this.lblLog.Name = "lblLog";
             this.lblLog.Size = new System.Drawing.Size(89, 32);
             this.lblLog.TabIndex = 0;

@@ -99,7 +99,8 @@ namespace kjhdflkjfhqldksjhn
             if (DataAccess.AuthenticationControl(login, pwd))
             {
                 frmConnection.Hide();
-                new frmHome(this).ShowDialog();
+                frmHome = new frmHome(this);
+                frmHome.ShowDialog();
                 return true;
             }
             else
@@ -122,8 +123,12 @@ namespace kjhdflkjfhqldksjhn
         /// </summary>
         public void AddPerso()
         { 
-            List<Services> listeServices = ListServices;
-            new frmAddPerso(this, null, listeServices).ShowDialog();
+            new frmAddPerso(this, null, ListServices).ShowDialog();
+        }
+
+        public void RefreshPerso()
+        {
+            frmHome.RefreshPerso();
         }
 
         /// <summary>
@@ -133,7 +138,8 @@ namespace kjhdflkjfhqldksjhn
         public void AjoutPersonnel(Personnel personnel)
         {
             DataAccess.AddPersonnel(personnel);
-
+            ListPersonnel.Add(personnel);
+            RefreshPerso();
         }
 
         /// <summary>
@@ -176,8 +182,13 @@ namespace kjhdflkjfhqldksjhn
         public void AjouterAbsences(Absences absence, Personnel personnel)
         {
             DataAccess.AddAbsence(absence, personnel);
+            ListAbsences.Add(absence);
         }
 
+        public void RefreshAbsence()
+        {
+            frmAbsences.RefreshAbsences();
+        }
         /// <summary>
         /// Ouvertude du formulaire d'ajout d'une absence
         /// </summary>

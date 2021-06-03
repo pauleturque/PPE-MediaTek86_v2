@@ -44,7 +44,6 @@ namespace kjhdflkjfhqldksjhn.ConnexionBD
             try
             {
                 connect = new MySqlConnection(connectionString);
-                //connect.Open();
                 Console.WriteLine("co ok");
             }
             catch (Exception e)
